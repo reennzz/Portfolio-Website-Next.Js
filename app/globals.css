@@ -1,0 +1,532 @@
+:root {
+  --bg: #071014;
+  --panel: #0d1c22;
+  --panel-soft: #10262d;
+  --text: #eef7f4;
+  --muted: #a8bbb6;
+  --line: rgba(238, 247, 244, 0.14);
+  --green: #5ee0a8;
+  --cyan: #54c8e8;
+  --coral: #ff8a7a;
+  --yellow: #f5c76b;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background:
+    linear-gradient(rgba(84, 200, 232, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(84, 200, 232, 0.05) 1px, transparent 1px),
+    radial-gradient(circle at 18% 14%, rgba(94, 224, 168, 0.18), transparent 28rem),
+    radial-gradient(circle at 86% 8%, rgba(255, 138, 122, 0.14), transparent 24rem),
+    var(--bg);
+  background-size: 48px 48px, 48px 48px, auto, auto, auto;
+  color: var(--text);
+  font-family:
+    Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.site-header {
+  align-items: center;
+  backdrop-filter: blur(18px);
+  background: rgba(7, 16, 20, 0.72);
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  height: 72px;
+  justify-content: space-between;
+  left: 0;
+  padding: 0 clamp(1rem, 4vw, 4rem);
+  position: sticky;
+  right: 0;
+  top: 0;
+  z-index: 20;
+}
+
+.brand,
+.desktop-nav,
+.hero-actions,
+.eyebrow,
+.project-topline,
+.contact-link {
+  align-items: center;
+  display: flex;
+}
+
+.brand {
+  font-weight: 750;
+  gap: 0.75rem;
+}
+
+.brand-mark {
+  display: grid;
+  height: 38px;
+  place-items: center;
+  width: 38px;
+  background: linear-gradient(135deg, var(--green), var(--cyan));
+  border-radius: 8px;
+  color: #061014;
+}
+
+.desktop-nav {
+  gap: clamp(1rem, 3vw, 2rem);
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.desktop-nav a:hover {
+  color: var(--text);
+}
+
+.icon-button {
+  align-items: center;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  display: none;
+  height: 42px;
+  justify-content: center;
+  width: 42px;
+}
+
+.hero {
+  display: grid;
+  gap: clamp(2rem, 7vw, 6rem);
+  grid-template-columns: minmax(0, 1fr) minmax(320px, 0.82fr);
+  min-height: calc(100vh - 72px);
+  padding: clamp(3rem, 8vw, 7rem) clamp(1rem, 4vw, 4rem) 4rem;
+}
+
+.hero-copy {
+  align-self: center;
+  max-width: 760px;
+}
+
+.eyebrow {
+  color: var(--green);
+  font-size: 0.82rem;
+  font-weight: 800;
+  gap: 0.5rem;
+  letter-spacing: 0;
+  margin: 0 0 1rem;
+  text-transform: uppercase;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+
+h1 {
+  font-size: clamp(3.2rem, 9vw, 6.8rem);
+  line-height: 0.95;
+  margin-bottom: 1.5rem;
+  max-width: 980px;
+}
+
+h2 {
+  font-size: clamp(2rem, 4vw, 4rem);
+  line-height: 1.04;
+  margin-bottom: 0;
+  max-width: 900px;
+}
+
+h3 {
+  font-size: 1.25rem;
+}
+
+.hero-text,
+.about-copy {
+  color: var(--muted);
+  font-size: clamp(1rem, 1.5vw, 1.24rem);
+  line-height: 1.75;
+  max-width: 690px;
+}
+
+.hero-actions {
+  flex-wrap: wrap;
+  gap: 0.9rem;
+  margin-top: 2rem;
+}
+
+.primary-button,
+.secondary-button {
+  align-items: center;
+  border-radius: 8px;
+  display: inline-flex;
+  font-weight: 750;
+  gap: 0.55rem;
+  min-height: 48px;
+  padding: 0.85rem 1.1rem;
+}
+
+.primary-button {
+  background: var(--green);
+  color: #061014;
+}
+
+.secondary-button {
+  border: 1px solid var(--line);
+  color: var(--text);
+}
+
+.hero-visual {
+  align-self: center;
+  min-height: 460px;
+  position: relative;
+}
+
+.terminal-window {
+  background: rgba(13, 28, 34, 0.88);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.32);
+  overflow: hidden;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.terminal-bar {
+  background: rgba(255, 255, 255, 0.06);
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  gap: 0.5rem;
+  padding: 1rem;
+}
+
+.terminal-bar span {
+  border-radius: 999px;
+  display: block;
+  height: 12px;
+  width: 12px;
+}
+
+.terminal-bar span:nth-child(1) {
+  background: var(--coral);
+}
+
+.terminal-bar span:nth-child(2) {
+  background: var(--yellow);
+}
+
+.terminal-bar span:nth-child(3) {
+  background: var(--green);
+}
+
+.terminal-body {
+  color: #d8f5ed;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  font-size: clamp(0.86rem, 1.8vw, 1rem);
+  line-height: 1.9;
+  padding: clamp(1.2rem, 4vw, 2rem);
+}
+
+.terminal-body p {
+  margin-bottom: 0.8rem;
+  overflow-wrap: anywhere;
+}
+
+.terminal-body span {
+  color: var(--coral);
+}
+
+.orbit-card {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  color: #061014;
+  font-weight: 900;
+  padding: 0.8rem 1rem;
+  position: absolute;
+}
+
+.card-ai {
+  background: var(--green);
+  right: 8%;
+  top: 4%;
+}
+
+.card-data {
+  background: var(--cyan);
+  bottom: 10%;
+  left: 4%;
+}
+
+.card-code {
+  background: var(--yellow);
+  bottom: 28%;
+  right: 0;
+}
+
+.section {
+  padding: clamp(4rem, 8vw, 7rem) clamp(1rem, 4vw, 4rem);
+}
+
+.page-section {
+  min-height: calc(100vh - 72px);
+}
+
+.section-heading {
+  margin-bottom: clamp(1.8rem, 4vw, 3rem);
+}
+
+.about-grid {
+  display: grid;
+  gap: clamp(2rem, 5vw, 4rem);
+  grid-template-columns: minmax(0, 0.82fr) minmax(320px, 1fr);
+}
+
+.interest-grid,
+.project-grid,
+.contact-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.interest-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.interest-card,
+.project-card,
+.contact-link {
+  background: rgba(13, 28, 34, 0.74);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+
+.interest-card,
+.project-card {
+  padding: 1.25rem;
+}
+
+.interest-card svg {
+  color: var(--cyan);
+  margin-bottom: 1.1rem;
+}
+
+.interest-card p,
+.project-card p {
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+.experience-list {
+  display: grid;
+  gap: 1rem;
+}
+
+.experience-card {
+  background: rgba(13, 28, 34, 0.74);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  display: grid;
+  gap: 1.2rem;
+  grid-template-columns: auto minmax(0, 1fr);
+  padding: clamp(1.2rem, 3vw, 1.6rem);
+}
+
+.experience-mark {
+  align-items: center;
+  background: linear-gradient(135deg, var(--green), var(--cyan));
+  border-radius: 8px;
+  color: #061014;
+  display: flex;
+  height: 54px;
+  justify-content: center;
+  width: 54px;
+}
+
+.experience-header {
+  align-items: flex-start;
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+}
+
+.experience-header h3 {
+  margin-bottom: 0.35rem;
+}
+
+.experience-company,
+.experience-period {
+  color: var(--muted);
+  margin-bottom: 0;
+}
+
+.experience-period {
+  align-items: center;
+  display: flex;
+  flex: 0 0 auto;
+  gap: 0.45rem;
+  white-space: nowrap;
+}
+
+.experience-period svg {
+  color: var(--green);
+}
+
+.experience-highlights {
+  display: grid;
+  gap: 0.75rem;
+  list-style: none;
+  margin: 1.35rem 0 0;
+  padding: 0;
+}
+
+.experience-highlights li {
+  color: var(--muted);
+  display: grid;
+  gap: 0.65rem;
+  grid-template-columns: auto minmax(0, 1fr);
+  line-height: 1.65;
+}
+
+.experience-highlights svg {
+  color: var(--green);
+  margin-top: 0.25rem;
+}
+
+.experience-skills {
+  margin-top: 1.4rem;
+}
+
+.project-grid {
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.project-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 330px;
+}
+
+.project-topline {
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+.project-topline svg {
+  color: var(--green);
+}
+
+.stack-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+}
+
+.stack-list span {
+  background: rgba(84, 200, 232, 0.1);
+  border: 1px solid rgba(84, 200, 232, 0.24);
+  border-radius: 8px;
+  color: #cdeff7;
+  font-size: 0.82rem;
+  padding: 0.35rem 0.55rem;
+}
+
+.contact-section {
+  padding-bottom: 7rem;
+}
+
+.contact-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.contact-link {
+  gap: 0.8rem;
+  justify-content: space-between;
+  min-height: 74px;
+  padding: 1rem;
+}
+
+.contact-link span {
+  flex: 1;
+  overflow-wrap: anywhere;
+}
+
+.contact-link svg {
+  color: var(--green);
+  flex: 0 0 auto;
+}
+
+@media (max-width: 980px) {
+  .hero,
+  .about-grid,
+  .project-grid,
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .experience-header {
+    display: grid;
+  }
+
+  .experience-period {
+    white-space: normal;
+  }
+
+  .hero {
+    min-height: auto;
+  }
+
+  .hero-visual {
+    min-height: 360px;
+  }
+
+  .interest-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 680px) {
+  .desktop-nav {
+    display: none;
+  }
+
+  .icon-button {
+    display: inline-flex;
+  }
+
+  .site-header {
+    height: 64px;
+  }
+
+  .hero {
+    padding-top: 3rem;
+  }
+
+  .hero-visual {
+    min-height: 300px;
+  }
+
+  .card-code {
+    bottom: 14%;
+  }
+
+  .brand span:last-child {
+    max-width: 150px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .experience-card {
+    grid-template-columns: 1fr;
+  }
+}
